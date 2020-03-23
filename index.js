@@ -2,8 +2,6 @@ const express = require('express');
 //const morgan = require('morgan');  //volleyball dose same thing.It also logs responses..!!(margon only incomin one.)
 const volleyball=require('volleyball');
 
-const bodyParser=require("body-parser");
-
 const app = express();
 
 const auth=require('./auth/index.js');  //bringing router..!!
@@ -11,7 +9,7 @@ const auth=require('./auth/index.js');  //bringing router..!!
 //app.use(morgan('dev')); //http request logger..!!
 app.use(volleyball);
 
-app.use(bodyParser.json());
+app.use(express.json());
 
 app.use("/auth",auth); //when ever a /auth request come then this middleware is called...!!
 
